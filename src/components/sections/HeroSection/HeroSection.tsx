@@ -3,6 +3,7 @@ import styled from "styled-components";
 import Header from "../../Header";
 import {ReactComponent as Eye} from '../../../assets/eye.svg';
 import {Viewports} from "../../../styles";
+import useWindowSize from "../../../utils/hooks/useWindowSize";
 
 
 interface EyeLineProps {
@@ -24,9 +25,9 @@ enum JustifyContent {
 }
 
 
-const EyeLineWrapper = styled.div<{justifyContent: JustifyContent}>`
+const EyeLineWrapper = styled.div<{justifyContent?: JustifyContent}>`
   display: flex;
-  justify-content: ${({justifyContent}) => justifyContent};
+  justify-content: ${({justifyContent}) => justifyContent };
   flex-direction: ${({justifyContent}) => justifyContent === 'start' ? 'row' : 'row-reverse'};
   height: 16%;
 `
@@ -48,6 +49,14 @@ const EyeLine: React.FC = ({nElements, firstColor, secondColor, justifyContent}:
             </EyeLineWrapper>
         </>);
 }
+
+const EyeLineMobile: React.FC = ({nElements, firstColor, secondColor}: EyeLineProps) => {
+    return (
+            <EyeLineWrapper>
+                {[...Array(nElements)].map((e,i) => <Image width='auto' fill={i % 2 === 0 ? firstColor : secondColor}/> )}
+            </EyeLineWrapper>);
+}
+
 
 
 const FirstSectionWrapper = styled.div`
@@ -73,15 +82,28 @@ const BigText = styled.h1`
 
 const HeroSection: React.FC = () => {
 
+    const screenWidth = useWindowSize().width;
+
+
     return (<FirstSectionWrapper dynamic>
             <Header/>
-            <HeroSectionWrapper>
+            {screenWidth > Viewports.tablet ? (            <HeroSectionWrapper>
                 <EyeLine nElements={6} firstColor={EyeColors.white} secondColor={EyeColors.pink} justifyContent={JustifyContent.start}/>
                 <EyeLine nElements={6} firstColor={EyeColors.yellow} secondColor={EyeColors.pink} justifyContent={JustifyContent.end}/>
                 <div><BigText>CITRUS x LEMON</BigText></div>
                 <EyeLine nElements={6} firstColor={EyeColors.yellow} secondColor={EyeColors.pink} justifyContent={JustifyContent.start}/>
                 <EyeLine nElements={6} firstColor={EyeColors.white} secondColor={EyeColors.pink} justifyContent={JustifyContent.end}/>
-            </HeroSectionWrapper>
+            </HeroSectionWrapper>) :
+                (
+                <>
+                    <EyeLineMobile nElements={3} firstColor={EyeColors.white} secondColor={EyeColors.pink}/>
+                    <EyeLineMobile nElements={3} firstColor={EyeColors.pink} secondColor={EyeColors.yellow}/>
+                    <div><BigText>CITRUS x LEMON</BigText></div>
+                    <EyeLineMobile nElements={3} firstColor={EyeColors.pink} secondColor={EyeColors.yellow}/>
+                    <EyeLineMobile nElements={3} firstColor={EyeColors.white} secondColor={EyeColors.pink}/>
+                </>
+            )}
+
         </FirstSectionWrapper>
     );
 }
