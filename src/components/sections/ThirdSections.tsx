@@ -58,7 +58,7 @@ const ThirdSection: React.FC = () => {
     const screenWidth = useWindowSize().width;
 
     const opts = {
-        height: screenWidth > Viewports.tabletLandscape ? '100%' : '500px',
+        height: screenWidth > Viewports.tabletLandscape ? '100%' : '300px',
         width: '100%',
         playerVars: {
             // https://developers.google.com/youtube/player_parameters
@@ -94,7 +94,8 @@ const ThirdSection: React.FC = () => {
                 <VideosWrapper>
                     <YouTube videoId={youtubeParser(SHORT_VIDEO)} opts={opts} onReady={_onReady}/>
                 </VideosWrapper>
-            </ThirdSectionWrapper>)}
+            </ThirdSectionWrapper>
+            )}
 
         </Section>
     )
