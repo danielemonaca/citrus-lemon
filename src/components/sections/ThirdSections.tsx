@@ -74,15 +74,28 @@ const ThirdSection: React.FC = () => {
 
     return (
         <Section backgroundType={BackgroundType.dark} dynamic>
-            <ThirdSectionWrapper>
+            {screenWidth > Viewports.tabletLandscape ? (<>
+                <ThirdSectionWrapper>
+                    <ImageWrapper>
+                        <img src={LemonGrabbing} alt={''}/>
+                    </ImageWrapper>
+                    <VideosWrapper>
+                        <YouTube videoId={youtubeParser(VR_VIDEO)} opts={opts} onReady={_onReady}/>
+                        <YouTube videoId={youtubeParser(SHORT_VIDEO)} opts={opts} onReady={_onReady}/>
+                    </VideosWrapper>
+                </ThirdSectionWrapper>
+            </>) : (<ThirdSectionWrapper>
+                <VideosWrapper>
+                    <YouTube videoId={youtubeParser(VR_VIDEO)} opts={opts} onReady={_onReady}/>
+                </VideosWrapper>
                 <ImageWrapper>
                     <img src={LemonGrabbing} alt={''}/>
                 </ImageWrapper>
                 <VideosWrapper>
-                    <YouTube videoId={youtubeParser(VR_VIDEO)} opts={opts} onReady={_onReady}/>
                     <YouTube videoId={youtubeParser(SHORT_VIDEO)} opts={opts} onReady={_onReady}/>
                 </VideosWrapper>
-            </ThirdSectionWrapper>
+            </ThirdSectionWrapper>)}
+
         </Section>
     )
 
