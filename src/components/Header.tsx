@@ -2,6 +2,7 @@ import React from 'react';
 import styled from "styled-components";
 import {Inner} from "../layout/Inner";
 import logoGif from '../assets/blink-limone.gif';
+import {Viewports} from "../styles";
 
 const Header: React.FC = () => {
 
@@ -10,6 +11,10 @@ const Header: React.FC = () => {
       height: var(--header-height);
       display: flex;
       justify-content: space-between;
+      @media (max-width: ${Viewports.tablet}px) {
+        flex-direction: column; 
+        margin-bottom: 30px;
+      }
     `
 
     const LogoWrapperLink = styled.a`
@@ -20,6 +25,9 @@ const Header: React.FC = () => {
       align-content: center;
       vertical-align: middle;
       align-items: center;
+      @media (max-width: ${Viewports.tablet}px) {
+        justify-content: center;
+      }
     `
 
     const TextLogo = styled.span`
@@ -40,19 +48,19 @@ const Header: React.FC = () => {
       font-size: 25px;
     `
 
-    const MenuItem = styled.div`
-      
+    const MenuItem = styled.a`
+      color: white;
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      }
     `
-
-    const CustomImage = styled.img`
-    `
-
 
     return (
         <Inner>
         <HeaderWrapper>
             <LogoWrapperLink href='#'>
-                <CustomImage
+                <img
                     width="119px"
                     alt='Vai alla homepage'
                     src={logoGif}
@@ -60,13 +68,13 @@ const Header: React.FC = () => {
                 <TextLogo>Citrus X Lemon</TextLogo>
             </LogoWrapperLink>
             <Menu>
-                <MenuItem>
+                <MenuItem href='#'>
                     Video
                 </MenuItem>
-                <MenuItem>
+                <MenuItem href='#'>
                     Mappa
                 </MenuItem>
-                <MenuItem>
+                <MenuItem href='#'>
                     Produzione
                 </MenuItem>
 

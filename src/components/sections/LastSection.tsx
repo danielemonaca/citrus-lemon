@@ -10,6 +10,7 @@ import QRCode from "../../assets/QRCode.png";
 import LemonSeeds from "../../assets/LemonSeeds.png";
 import Footer from "../Footer";
 import {Viewports} from "../../styles";
+import useWindowSize from "../../utils/hooks/useWindowSize";
 
 
 const ImagesWrapper = styled.div`
@@ -60,16 +61,19 @@ const StyledForthPinkRectangle = styled(PinkRectangle)`
 
 const FifthSection: React.FC = () => {
 
+    const screenWidth = useWindowSize().width;
+
     return (
         <Section backgroundType={BackgroundType.light} dynamic>
             <ImagesWrapper className='wrap'>
                 <FirstRowImageContainer>
                     <Image src={DrawingQRCode} alt={''}/>
                 </FirstRowImageContainer>
+                {screenWidth > Viewports.tabletLandscape && (
                 <FirstRowImageContainer>
                     <StyledFirstPinkRectangle/>
                     <Image src={LemonWithTreeBackground} alt={''}/>
-                </FirstRowImageContainer>
+                </FirstRowImageContainer>)}
             </ImagesWrapper>
             <ImagesWrapper className='wrap'>
                 <SecondRowImageContainer>

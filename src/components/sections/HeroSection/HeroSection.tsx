@@ -53,7 +53,6 @@ const EyeLine: React.FC = ({nElements, firstColor, secondColor, justifyContent}:
 const FirstSectionWrapper = styled.div`
   background: var(--header-background);
   color: white;
-  
 `
 
 const HeroSectionWrapper = styled.section`
@@ -70,9 +69,7 @@ const BigText = styled.h1`
   @media (min-width: ${Viewports.desktop}px) {
     font-size: 280px;
   }
-  
 `
-
 
 const HeroSection: React.FC = () => {
 
@@ -85,7 +82,6 @@ const HeroSection: React.FC = () => {
                 <EyeLine nElements={6} firstColor={EyeColors.yellow} secondColor={EyeColors.pink} justifyContent={JustifyContent.start}/>
                 <EyeLine nElements={6} firstColor={EyeColors.white} secondColor={EyeColors.pink} justifyContent={JustifyContent.end}/>
             </HeroSectionWrapper>
-
         </FirstSectionWrapper>
     );
 }

@@ -1,7 +1,7 @@
 import React from 'react';
 import GlobalStyles from './styles';
 import HeroSection from "./components/sections/HeroSection/HeroSection";
-import Section, {BackgroundType} from "./components/sections/Section";
+import {BackgroundType} from "./components/sections/Section";
 import SecondSection from "./components/sections/SecondSection";
 import ThirdSection from "./components/sections/ThirdSections";
 import GoogleMapSection from "./components/sections/GoogleMapSection/GoogleMapSection";

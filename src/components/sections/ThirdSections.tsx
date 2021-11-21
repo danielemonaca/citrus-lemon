@@ -2,11 +2,10 @@ import React from "react";
 import Section, {BackgroundType} from "./Section";
 import styled from "styled-components";
 import LemonGrabbing from '../../assets/LemonGrabbing.gif';
-import LemonWithoutBackground from '../../assets/lemonWithoutBackground.png';
-import LemonWithBackground from '../../assets/lemonWithBackground.png';
-import DraftLemons from '../../assets/DraftLemons.png';
 import YouTube from "react-youtube";
 import youtubeParser from "../../utils/youtubeParser";
+import {Viewports} from "../../styles";
+import useWindowSize from "../../utils/hooks/useWindowSize";
 
 
 const ThirdSectionWrapper = styled.div`
@@ -14,17 +13,40 @@ const ThirdSectionWrapper = styled.div`
   width: 100%;
   height: 80%;
   gap: 60px;
+  @media (max-width: ${Viewports.tabletLandscape}px) {
+    flex-direction: column;
+  }
 `
 
 const VideosWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   flex-direction: column;
-  width: 100%;
+  @media (min-width: ${Viewports.tabletLandscape}px) {
+    width: 60%;
+  }
+  align-content: stretch;
+  div{
+    height: 100%;
+  }
+  gap: 20px;
 `
 
 const ImageWrapper = styled.div`
-  width: 50%;
+  float: left;
+  
+
+  @media (min-width: ${Viewports.tabletLandscape}px) {
+    width: 40%;
+  }
+  height: 100%;
+
+  img {
+    height: 100%;
+    max-width: 100%;
+    display: block;
+    margin: auto;
+  } 
 `
 
 
@@ -33,8 +55,10 @@ const SHORT_VIDEO = 'https://www.youtube.com/watch?v=2BkFXj093lo&t=54s&ab_channe
 
 const ThirdSection: React.FC = () => {
 
+    const screenWidth = useWindowSize().width;
+
     const opts = {
-        height: '440px',
+        height: screenWidth > Viewports.tabletLandscape ? '100%' : '500px',
         width: '100%',
         playerVars: {
             // https://developers.google.com/youtube/player_parameters
@@ -49,7 +73,7 @@ const ThirdSection: React.FC = () => {
     }
 
     return (
-        <Section backgroundType={BackgroundType.dark}>
+        <Section backgroundType={BackgroundType.dark} dynamic>
             <ThirdSectionWrapper>
                 <ImageWrapper>
                     <img src={LemonGrabbing} alt={''}/>
@@ -59,7 +83,6 @@ const ThirdSection: React.FC = () => {
                     <YouTube videoId={youtubeParser(SHORT_VIDEO)} opts={opts} onReady={_onReady}/>
                 </VideosWrapper>
             </ThirdSectionWrapper>
-
         </Section>
     )
 

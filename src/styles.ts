@@ -4,6 +4,7 @@ import {createGlobalStyle} from "styled-components";
 export const Viewports = {
     mobile: 375,
     tablet: 768,
+    tabletLandscape: 900,
     desktop: 1350,
 };
 

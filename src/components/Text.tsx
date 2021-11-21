@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from "styled-components";
-import {HeadlineProps} from "./Headline";
 import {Viewports} from "../styles";
 
 export interface TextProps {
