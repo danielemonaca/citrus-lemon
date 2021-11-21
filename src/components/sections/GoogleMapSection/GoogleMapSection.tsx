@@ -4,20 +4,19 @@ import GoogleMap from "./GoogleMap";
 import styled from "styled-components";
 
 const GoogleMapContainer = styled.div`
-  height: 1300px;
+  height: 90vh;
   width: 100%;
 `
 
 const GoogleMapSection: React.FC = () => {
     return (
-        <Section backgroundType={BackgroundType.light}>
+        <Section backgroundType={BackgroundType.light} dynamic>
             <GoogleMapContainer>
             <GoogleMap/>
             </GoogleMapContainer>
         </Section>
 
     )
-
 }
 
 

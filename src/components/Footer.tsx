@@ -1,9 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import {Inner} from "../layout/Inner";
-import UnbooleanLogo from "../assets/unbooleanLogo.jpg";
 import {Viewports} from "../styles";
-import useWindowSize from "../utils/hooks/useWindowSize";
 
 
 const FooterWrapper = styled.footer`
@@ -48,7 +46,6 @@ const CreditContainer = styled.div`
 
 const Footer: React.FC = () => {
 
-    const screenWidth = useWindowSize().width;
 
     return (
         <FooterWrapper>
@@ -59,7 +56,7 @@ const Footer: React.FC = () => {
                         CITRUS x LEMON
                     </FooterLogoWrapper>
                         <div>
-                        {'   '}By <img src={UnbooleanLogo} width={screenWidth > Viewports.tablet ? '140px' : '80px'} alt="logo-footer"/></div>
+                        {'   '}By UNBOOLEAN</div>
                     </CreditContainer>
                     <div>
                         Contatti

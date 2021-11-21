@@ -59,7 +59,7 @@ const StyledForthPinkRectangle = styled(PinkRectangle)`
 `
 
 
-const FifthSection: React.FC = () => {
+const LastSection: React.FC = () => {
 
     const screenWidth = useWindowSize().width;
 
@@ -93,4 +93,4 @@ const FifthSection: React.FC = () => {
 }
 
 
-export default FifthSection;
+export default LastSection;

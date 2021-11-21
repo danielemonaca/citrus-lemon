@@ -26,7 +26,7 @@ const Header: React.FC = () => {
       vertical-align: middle;
       align-items: center;
       @media (max-width: ${Viewports.tablet}px) {
-        justify-content: center;
+        justify-content: flex-start;
       }
     `
 
