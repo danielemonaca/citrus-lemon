@@ -150,7 +150,7 @@ const FifthSection: React.FC = () => {
                     </FirstColumn>
                     <VideoWrapper>
                         <YouTube
-                            videoId={youtubeParser('https://www.youtube.com/watch?v=2BkFXj093lo&t=54s&ab_channel=CITRUSxLEMON')}
+                            videoId={youtubeParser('https://www.youtube.com/watch?v=V-DrQU7Oqtg&t=3s&ab_channel=CITRUSxLEMON')}
                             opts={opts} onReady={_onReady}/>
                     </VideoWrapper>
                 </ContentWrapper>
@@ -182,7 +182,7 @@ const FifthSection: React.FC = () => {
                 </Text>
                 <VideoWrapper>
                     <YouTube
-                        videoId={youtubeParser('https://www.youtube.com/watch?v=2BkFXj093lo&t=54s&ab_channel=CITRUSxLEMON')}
+                        videoId={youtubeParser('https://www.youtube.com/watch?v=V-DrQU7Oqtg&t=2s&ab_channel=CITRUSxLEMON')}
                         opts={opts} onReady={_onReady}/>
                 </VideoWrapper>
                 <Text>
