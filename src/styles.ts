@@ -11,8 +11,9 @@ export const Viewports = {
 
 const GlobalStyles = createGlobalStyle`
   @import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Zilla+Slab:ital,wght@0,300;0,400;0,500;1,400&display=swap');
   body {
-    font-family: 'Amatic SC', cursive;
+    font-family: 'Amatic SC', 'Zilla Slab', cursive;
     color: var(--secondary-color-700);
     font-size: var(--base-font-size);
     font-weight: var(--font-weight-standard);
