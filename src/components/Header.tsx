@@ -4,9 +4,8 @@ import {Inner} from "../layout/Inner";
 import logoGif from '../assets/blink-limone.gif';
 import {Viewports} from "../styles";
 
-const Header: React.FC = () => {
 
-    const HeaderWrapper = styled.header`
+const HeaderWrapper = styled.header`
       color: white;
       height: var(--header-height);
       display: flex;
@@ -17,7 +16,7 @@ const Header: React.FC = () => {
       }
     `
 
-    const LogoWrapperLink = styled.a`
+const LogoWrapperLink = styled.a`
       margin: auto 0;
       all: unset;
       display: flex;
@@ -30,13 +29,13 @@ const Header: React.FC = () => {
       }
     `
 
-    const TextLogo = styled.span`
+const TextLogo = styled.span`
       font-size: 36px; 
       font-family: 'Amatic SC',serif;
       font-weight: bold;
     `
 
-    const Menu = styled.nav`
+const Menu = styled.nav`
       display: flex;
       justify-content: space-evenly;
       float: right;
@@ -48,13 +47,15 @@ const Header: React.FC = () => {
       font-size: 25px;
     `
 
-    const MenuItem = styled.a`
+const MenuItem = styled.a`
       color: white;
       text-decoration: none;
       &:hover {
         text-decoration: underline;
       }
     `
+
+const Header: React.FC = () => {
 
     return (
         <Inner>

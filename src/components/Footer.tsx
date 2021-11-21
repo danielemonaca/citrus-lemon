@@ -29,6 +29,7 @@ const ContentFooterWrapper = styled.div`
 const FooterLogoWrapper = styled.div`
   padding: 10px 10px;
   border-radius: 2px;
+  user-select: none;
   background: var(--logo-footer-grey);
   color: white;
   font-family: 'Amatic SC', cursive;
@@ -44,6 +45,16 @@ const CreditContainer = styled.div`
   gap: 6px;
 `
 
+const CustomLink = styled.a`
+  color: var(--logo-footer-grey);
+  text-decoration: none;
+  &:hover {
+    color: var(--logo-footer-grey-hover);
+  }
+
+`
+
+
 const Footer: React.FC = () => {
 
 
@@ -56,22 +67,20 @@ const Footer: React.FC = () => {
                         CITRUS x LEMON
                     </FooterLogoWrapper>
                         <div>
-                        {'   '}By UNBOOLEAN</div>
+                        {'   '}By <CustomLink href={'https://unboolean.art/'}>UNBOOLEAN</CustomLink></div>
                     </CreditContainer>
-                    <div>
+                    <CustomLink href='https://www.instagram.com/oak_sky/'>
                         Contatti
-                    </div>
-                    <div>
+                    </CustomLink>
+                    <CustomLink href='https://www.instagram.com/oak_sky/'>
                         Policy
-                    </div>
-                    <div>
+                    </CustomLink>
+                    <CustomLink href='https://www.instagram.com/oak_sky/'>
                         Termini e condizioni
-                    </div>
+                    </CustomLink>
                 </ContentFooterWrapper>
             </Inner>
         </FooterWrapper>
     )
 }
-
-
 export default Footer;
