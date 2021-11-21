@@ -3,7 +3,6 @@ import Section, {BackgroundType} from "./Section";
 import styled from "styled-components";
 import Headline from "../Headline";
 import Text from "../Text";
-import YouTube from "react-youtube";
 import youtubeParser from "../../utils/youtubeParser";
 import LemonWithoutBackground from "../../assets/lemonWithoutBackground.png";
 import LemonWithBackground from "../../assets/lemonWithBackground.png";
@@ -13,6 +12,7 @@ import PinkRectangle from "../PinkRectangle";
 import useWindowSize from "../../utils/hooks/useWindowSize";
 import {Viewports} from "../../styles";
 import LemonWithTreeBackground from "../../assets/LemonWithTreeBackground.png";
+import YoutubePlayer from "../youtube-player/YoutubePlayer";
 
 
 const VideoWrapper = styled.div`
@@ -100,17 +100,7 @@ const FifthSection: React.FC = () => {
     const opts = {
         height: '390',
         width: '100%',
-        playerVars: {
-            // https://developers.google.com/youtube/player_parameters
-            autoplay: 1,
-            controls: 0
-        },
     };
-
-    const _onReady = (e) => {
-        // access to player in all event handlers via e.target
-        e.target.pauseVideo();
-    }
 
 
     return (
@@ -149,9 +139,7 @@ const FifthSection: React.FC = () => {
 
                     </FirstColumn>
                     <VideoWrapper>
-                        <YouTube
-                            videoId={youtubeParser('https://www.youtube.com/watch?v=V-DrQU7Oqtg&t=3s&ab_channel=CITRUSxLEMON')}
-                            opts={opts} onReady={_onReady}/>
+                        <YoutubePlayer videoId={youtubeParser('https://www.youtube.com/watch?v=V-DrQU7Oqtg&t=3s&ab_channel=CITRUSxLEMON')} {...opts}/>
                     </VideoWrapper>
                 </ContentWrapper>
                 <ImagesWrapper>
@@ -181,9 +169,7 @@ const FifthSection: React.FC = () => {
                     <br/>
                 </Text>
                 <VideoWrapper>
-                    <YouTube
-                        videoId={youtubeParser('https://www.youtube.com/watch?v=V-DrQU7Oqtg&t=2s&ab_channel=CITRUSxLEMON')}
-                        opts={opts} onReady={_onReady}/>
+                    <YoutubePlayer videoId={youtubeParser('https://www.youtube.com/watch?v=V-DrQU7Oqtg&t=3s&ab_channel=CITRUSxLEMON')} {...opts}/>
                 </VideoWrapper>
                 <Text>
                     I video hanno un racconto di tipo ontologico, ma comunque intrecciato. L'animazione a tecnica

@@ -2,10 +2,10 @@ import React from "react";
 import Section, {BackgroundType} from "./Section";
 import styled from "styled-components";
 import LemonGrabbing from '../../assets/LemonGrabbing.gif';
-import YouTube from "react-youtube";
 import youtubeParser from "../../utils/youtubeParser";
 import {Viewports} from "../../styles";
 import useWindowSize from "../../utils/hooks/useWindowSize";
+import YoutubePlayer from "../youtube-player/YoutubePlayer";
 
 
 const ThirdSectionWrapper = styled.div`
@@ -60,17 +60,7 @@ const ThirdSection: React.FC = () => {
     const opts = {
         height: screenWidth > Viewports.tabletLandscape ? '100%' : '300px',
         width: '100%',
-        playerVars: {
-            // https://developers.google.com/youtube/player_parameters
-            autoplay: 1,
-            controls: 0
-        },
     };
-
-    const _onReady = (e) => {
-        // access to player in all event handlers via e.target
-        e.target.pauseVideo();
-    }
 
     return (
         <Section backgroundType={BackgroundType.dark} dynamic>
@@ -80,23 +70,22 @@ const ThirdSection: React.FC = () => {
                         <img src={LemonGrabbing} alt={''}/>
                     </ImageWrapper>
                     <VideosWrapper>
-                        <YouTube videoId={youtubeParser(VR_VIDEO)} opts={opts} onReady={_onReady}/>
-                        <YouTube videoId={youtubeParser(SHORT_VIDEO)} opts={opts} onReady={_onReady}/>
+                        <YoutubePlayer videoId={youtubeParser(VR_VIDEO)} {...opts} />
+                        <YoutubePlayer videoId={youtubeParser(SHORT_VIDEO)} {...opts} />
                     </VideosWrapper>
                 </ThirdSectionWrapper>
             </>) : (<ThirdSectionWrapper>
                 <VideosWrapper>
-                    <YouTube videoId={youtubeParser(VR_VIDEO)} opts={opts} onReady={_onReady}/>
+                    <YoutubePlayer videoId={youtubeParser(VR_VIDEO)} {...opts}  />
                 </VideosWrapper>
                 <ImageWrapper>
                     <img src={LemonGrabbing} alt={''}/>
                 </ImageWrapper>
                 <VideosWrapper>
-                    <YouTube videoId={youtubeParser(SHORT_VIDEO)} opts={opts} onReady={_onReady}/>
+                    <YoutubePlayer videoId={youtubeParser(SHORT_VIDEO)} {...opts}  />
                 </VideosWrapper>
             </ThirdSectionWrapper>
             )}
-
         </Section>
     )
 

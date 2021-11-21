@@ -1,7 +1,8 @@
 import React from "react";
 import Section, {BackgroundType} from "../Section";
-import GoogleMap from "./GoogleMap";
+import GoogleMapComponent from "./GoogleMapComponent";
 import styled from "styled-components";
+
 
 const GoogleMapContainer = styled.div`
   height: 90vh;
@@ -12,7 +13,7 @@ const GoogleMapSection: React.FC = () => {
     return (
         <Section backgroundType={BackgroundType.light} dynamic>
             <GoogleMapContainer>
-            <GoogleMap/>
+            <GoogleMapComponent/>
             </GoogleMapContainer>
         </Section>
 
