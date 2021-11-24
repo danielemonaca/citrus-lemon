@@ -41,13 +41,14 @@ const FooterLogoWrapper = styled.div`
 
 const CreditContainer = styled.div`
   display: flex;
-  align-items: end;
+  align-items: center;
   gap: 6px;
 `
 
 const CustomLink = styled.a`
   color: var(--logo-footer-grey);
   text-decoration: none;
+
   &:hover {
     color: var(--logo-footer-grey-hover);
   }
@@ -63,11 +64,11 @@ const Footer: React.FC = () => {
             <Inner>
                 <ContentFooterWrapper>
                     <CreditContainer>
-                    <FooterLogoWrapper>
-                        CITRUS x LEMON
-                    </FooterLogoWrapper>
+                        <FooterLogoWrapper>
+                            CITRUS x LEMON
+                        </FooterLogoWrapper>
                         <div>
-                        {'   '}By <CustomLink href={'https://unboolean.art/'}>UNBOOLEAN</CustomLink></div>
+                            {'   '}By <CustomLink href={'https://unboolean.art/'}>UNBOOLEAN</CustomLink></div>
                     </CreditContainer>
                     <CustomLink href='https://www.instagram.com/oak_sky/'>
                         Contatti
