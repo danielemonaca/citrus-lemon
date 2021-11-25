@@ -58,7 +58,7 @@ const ThirdSection: React.FC = () => {
     const screenWidth = useWindowSize().width;
 
     const opts = {
-        height: screenWidth > Viewports.tabletLandscape ? '100%' : '300px',
+        height: screenWidth > Viewports.tabletLandscape ? '100%' : '200px',
         width: '100%',
     };
 
