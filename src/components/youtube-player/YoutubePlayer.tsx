@@ -13,7 +13,7 @@ return(
         <iframe
             width={width}
             height={height}
-            src={`https://www.youtube.com/embed/${videoId}?autoplay=1`}
+            src={`https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1`}
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen

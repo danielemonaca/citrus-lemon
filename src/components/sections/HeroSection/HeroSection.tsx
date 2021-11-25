@@ -44,7 +44,7 @@ const EyeLine: React.FC = ({nElements, firstColor, secondColor, justifyContent}:
     return (
         <>
             <EyeLineWrapper justifyContent={justifyContent}>
-                {[...Array(nElements)].map((e,i) => <Image width='auto' fill={i % 2 === 0 ? firstColor : secondColor}/> )}
+                {[...Array(nElements)].map((e,i) => <Image width='auto' key={i} fill={i % 2 === 0 ? firstColor : secondColor}/> )}
                 <EmptyBox/>
             </EyeLineWrapper>
         </>);
@@ -53,7 +53,7 @@ const EyeLine: React.FC = ({nElements, firstColor, secondColor, justifyContent}:
 const EyeLineMobile: React.FC = ({nElements, firstColor, secondColor}: EyeLineProps) => {
     return (
             <EyeLineWrapper>
-                {[...Array(nElements)].map((e,i) => <Image width='auto' fill={i % 2 === 0 ? firstColor : secondColor}/> )}
+                {[...Array(nElements)].map((e,i) => <Image key={i} width='auto' fill={i % 2 === 0 ? firstColor : secondColor}/> )}
             </EyeLineWrapper>);
 }
 

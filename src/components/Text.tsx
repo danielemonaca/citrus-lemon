@@ -7,9 +7,7 @@ export interface TextProps {
     children: string;
 }
 
-const Text: React.FC<TextProps> = ({ children, className }: TextProps) => {
-
-    const TextWrapper = styled.p`
+const TextWrapper = styled.p`
       font-family: "Zilla Slab", sans-serif;
       font-size: 15px;
       @media (min-width: ${Viewports.tablet}px) {
@@ -19,6 +17,8 @@ const Text: React.FC<TextProps> = ({ children, className }: TextProps) => {
       color: var(--text-color);
     `
 
+
+const Text: React.FC<TextProps> = ({ children, className }: TextProps) => {
 
     return (
         <TextWrapper className={className}>

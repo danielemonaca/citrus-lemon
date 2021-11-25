@@ -19,8 +19,8 @@ function App() {
             <SecondSection/>
             <ThirdSection/>
             <GoogleMapSection/>
-            <FifthSection backgroundType={BackgroundType.dark}>hellofaoeifnaoseifn</FifthSection>
-            <LastSection backgroundType={BackgroundType.light}>hellofaoeifnaoseifn</LastSection>
+            <FifthSection backgroundType={BackgroundType.dark}/>
+            <LastSection backgroundType={BackgroundType.light}/>
         </>
     );
 }

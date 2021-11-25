@@ -1,44 +1,55 @@
-import React from 'react'
-import {GoogleMap, useJsApiLoader} from '@react-google-maps/api';
+import React, {useRef, useState} from 'react'
+import {GoogleMap, Marker, useJsApiLoader} from '@react-google-maps/api';
+import markerIcon from '../../../assets/marker.png';
 
 const containerStyle = {
     width: '100%',
     height: '100%'
 };
 
-const center = {
-    lat: 41.85,
-    lng: 12.49
-};
-
 function GoogleMapComponent() {
+
+    const center = {
+        lat: 41.902782,
+        lng: 12.496365
+    };
+
     const { isLoaded } = useJsApiLoader({
         id: 'google-map-script',
         googleMapsApiKey: "AIzaSyCrhko7oOe2TB9_COTXZckSoqhpHWEJfLI"
     })
 
-    const [map, setMap] = React.useState(null);
+    const mapRef = useRef(null);
+    const [position, setPosition] = useState({
+        lat: 41.902782,
+        lng: 12.496365
+    });
 
-    console.log(map);
+    function handleLoad(map) {
+        mapRef.current = map;
+    }
 
-    const onLoad = React.useCallback(function callback(map) {
-        const bounds = new window.google.maps.LatLngBounds();
-        map.fitBounds(bounds);
-        setMap(map)
-    }, [])
+    function handleCenter() {
+        if (!mapRef.current) return;
 
-    const onUnmount = React.useCallback(function callback(map) {
-        setMap(null)
-    }, [])
+        const newPos = mapRef.current.getCenter().toJSON();
+        setPosition(newPos);
+    }
 
     return isLoaded ? (
         <GoogleMap
             mapContainerStyle={containerStyle}
-            center={center}
+            center={position}
             zoom={10}
-            onLoad={onLoad}
-            onUnmount={onUnmount}
+            onDragEnd={handleCenter}
+            onLoad={handleLoad}
         >
+            <Marker
+                icon={markerIcon}
+                position={center}
+
+            >
+            </Marker>
         </GoogleMap>
     ) : <></>
 }

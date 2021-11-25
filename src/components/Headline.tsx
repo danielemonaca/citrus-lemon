@@ -7,10 +7,9 @@ export interface HeadlineProps {
     children: string;
 }
 
-const Headline: React.FC<HeadlineProps> = ({ children, className }: HeadlineProps) => {
 
 
-    const HeadlineWrapper = styled.h4`
+const HeadlineWrapper = styled.h4`
       font-family: "Zilla Slab", sans-serif;
       font-weight: 700;
       margin-bottom: 0;
@@ -21,6 +20,8 @@ const Headline: React.FC<HeadlineProps> = ({ children, className }: HeadlineProp
       color: var(--grey);
     `
 
+
+const Headline: React.FC<HeadlineProps> = ({ children, className }: HeadlineProps) => {
 
     return (
         <HeadlineWrapper className={className}>
