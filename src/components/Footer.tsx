@@ -4,11 +4,15 @@ import {Inner} from "../layout/Inner";
 import {Viewports} from "../styles";
 
 
-const FooterWrapper = styled.footer`
+interface FooterProps {
+    forPage?: boolean;
+}
+
+const FooterWrapper = styled.footer<{forPage: boolean}>`
   width: 100%;
   height: 50px;
-  position: absolute;
-  bottom: 20px;
+  position: ${({ forPage }) => !forPage && "absolute"};
+  bottom:20px;
   left: 0;
 `
 
@@ -56,11 +60,11 @@ const CustomLink = styled.a`
 `
 
 
-const Footer: React.FC = () => {
+const Footer: React.FC = ({forPage = false }: FooterProps) => {
 
 
     return (
-        <FooterWrapper>
+        <FooterWrapper forPage={forPage}>
             <Inner>
                 <ContentFooterWrapper>
                     <CreditContainer>

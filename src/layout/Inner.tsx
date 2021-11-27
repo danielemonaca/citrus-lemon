@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import {Viewports} from "../styles";
 
 export const Inner = styled.div`
-  width: 80%;
+  width: 85%;
   margin: auto;
   height: 100%;
   @media (min-width: ${Viewports.tablet}px) {

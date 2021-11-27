@@ -1,5 +1,4 @@
 import React from 'react';
-import GlobalStyles from './styles';
 import HeroSection from "./components/sections/HeroSection/HeroSection";
 import {BackgroundType} from "./components/sections/Section";
 import SecondSection from "./components/sections/SecondSection";
@@ -14,7 +13,7 @@ import LastSection from "./components/sections/LastSection";
 function App() {
     return (
         <>
-            <GlobalStyles/>
+
             <HeroSection/>
             <SecondSection/>
             <ThirdSection/>

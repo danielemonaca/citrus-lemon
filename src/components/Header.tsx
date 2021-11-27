@@ -5,14 +5,13 @@ import logoGif from '../assets/blink-limone.gif';
 import {Viewports} from "../styles";
 
 
-const HeaderWrapper = styled.header`
+const HeaderWrapper = styled.div`
   color: white;
   height: var(--header-height);
   display: flex;
   justify-content: space-between;
   @media (max-width: ${Viewports.tablet}px) {
     flex-direction: column;
-    margin-bottom: 30px;
   }
 `
 
@@ -34,7 +33,7 @@ const TextLogo = styled.span`
   font-family: 'Amatic SC', serif;
   font-weight: bold;
 `
-
+/*
 const Menu = styled.nav`
   display: flex;
   justify-content: space-evenly;
@@ -56,11 +55,16 @@ const MenuItem = styled.a`
   &:hover {
     text-decoration: underline;
   }
+`*/
+
+const HeaderContainer = styled.header`
+  background: var(--header-background);
 `
 
 const Header: React.FC = () => {
 
     return (
+        <HeaderContainer>
         <Inner>
             <HeaderWrapper>
                 <LogoWrapperLink href='#'>
@@ -71,7 +75,7 @@ const Header: React.FC = () => {
                     />
                     <TextLogo>Citrus X Lemon</TextLogo>
                 </LogoWrapperLink>
-                <Menu>
+                {/*<Menu>
                     <MenuItem href='#'>
                         VIDEO
                     </MenuItem>
@@ -82,9 +86,10 @@ const Header: React.FC = () => {
                         PRODUZIONE
                     </MenuItem>
 
-                </Menu>
+                </Menu> */}
             </HeaderWrapper>
         </Inner>
+        </HeaderContainer>
     );
 }
 
