@@ -13,7 +13,6 @@ import LastSection from "./components/sections/LastSection";
 function App() {
     return (
         <>
-
             <HeroSection/>
             <SecondSection/>
             <ThirdSection/>

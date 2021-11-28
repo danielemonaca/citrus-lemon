@@ -16,8 +16,9 @@ const HeaderWrapper = styled.div`
 `
 
 const LogoWrapperLink = styled.a`
-  margin: auto 0;
+  margin: auto 0; 
   all: unset;
+  cursor: pointer;
   display: flex;
   justify-content: start;
   align-content: center;
@@ -33,6 +34,7 @@ const TextLogo = styled.span`
   font-family: 'Amatic SC', serif;
   font-weight: bold;
 `
+
 /*
 const Menu = styled.nav`
   display: flex;
@@ -67,7 +69,7 @@ const Header: React.FC = () => {
         <HeaderContainer>
         <Inner>
             <HeaderWrapper>
-                <LogoWrapperLink href='#'>
+                <LogoWrapperLink href='/'>
                     <img
                         width="119px"
                         alt='Vai alla homepage'
