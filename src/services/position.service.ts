@@ -1,20 +1,16 @@
-import firebase from '../firebase/config';
 
-const db = firebase.database().ref("/scans");
 
+
+// TODO: service to get the scans
 
 class ScansDataService {
-
-    getAll() {
-        return db;
-    }
-
     newScan(scan) {
-        return db.push(scan);
+
     }
 
     get(id) {
-        return db.child(id);
+
+
     }
 
 }

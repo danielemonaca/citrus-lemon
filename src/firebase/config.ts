@@ -1,4 +1,6 @@
-import { initializeApp } from "firebase/app";
+import { initializeApp } from "firebase/app"
+import { getDatabase, ref } from "firebase/database"
+
 
 const firebaseConfig = {
     apiKey: "AIzaSyBeHjhp2KuQRyYsFodKIaUmmuniMAY2_1A",
@@ -12,4 +14,7 @@ const firebaseConfig = {
 };
 
 
-export default initializeApp(firebaseConfig);
+const firebaseApp = initializeApp(firebaseConfig);
+const db = getDatabase(firebaseApp);
+const scansRef = ref(db, "/scans");
+export default scansRef;
