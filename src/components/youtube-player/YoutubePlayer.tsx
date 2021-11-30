@@ -14,7 +14,7 @@ return(
                 title={title}
                 frameBorder="0"
                 allowFullScreen="true"
-                src={`http://www.youtube.com/embed/${videoId}`}>
+                src={`https://www.youtube.com/embed/${videoId}`}>
             </iframe>
         </div>
     </div>
