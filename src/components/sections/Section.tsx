@@ -23,6 +23,7 @@ const ContentWrapper = styled.div`
 const SectionWrapper = styled.section<{backgroundType: BackgroundType, isDynamic?: boolean}>`
   min-height: ${({isDynamic}) => isDynamic ? '60vh' : '100vh'};
   width: 100%;
+  z-index: -2;
   background: url(${({backgroundType}) => backgroundType === BackgroundType.light ? LightBackground : DarkBackground })  center center;
 `
 

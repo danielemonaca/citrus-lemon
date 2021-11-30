@@ -38,7 +38,6 @@ const ImagesWrapper = styled.div`
 
 
 const CustomImage = styled(Image)`
-
   width: 100%;
   
   @media (min-width: ${Viewports.tabletLandscape}px) {
@@ -75,7 +74,6 @@ const StyledSecondPinkRectangle = styled(PinkRectangle)`
   @media (max-width: ${Viewports.tabletLandscape}px) {
     top: -30px;
   }
-
   transform: rotate(-45deg);
 `
 
@@ -96,12 +94,6 @@ const ImageWrapper = styled.div`
 const FifthSection: React.FC = () => {
 
     const screenWidth = useWindowSize().width;
-
-    const opts = {
-        height: '390',
-        width: '100%',
-    };
-
 
     return (
         <Section backgroundType={BackgroundType.dark}>
@@ -139,7 +131,7 @@ const FifthSection: React.FC = () => {
 
                     </FirstColumn>
                     <VideoWrapper>
-                        <YoutubePlayer videoId={youtubeParser('https://www.youtube.com/watch?v=V-DrQU7Oqtg&t=3s&ab_channel=CITRUSxLEMON')} {...opts}/>
+                        <YoutubePlayer title={'behind the scenes'} videoId={youtubeParser('https://www.youtube.com/watch?v=V-DrQU7Oqtg&t=3s&ab_channel=CITRUSxLEMON')}/>
                     </VideoWrapper>
                 </ContentWrapper>
                 <ImagesWrapper>
@@ -169,7 +161,7 @@ const FifthSection: React.FC = () => {
                     <br/>
                 </Text>
                 <VideoWrapper>
-                    <YoutubePlayer videoId={youtubeParser('https://www.youtube.com/watch?v=V-DrQU7Oqtg&t=3s&ab_channel=CITRUSxLEMON')} {...opts}/>
+                    <YoutubePlayer title={'behind the scenes'} videoId={youtubeParser('https://www.youtube.com/watch?v=V-DrQU7Oqtg&t=3s&ab_channel=CITRUSxLEMON')}/>
                 </VideoWrapper>
                 <Text>
                     I video hanno un racconto di tipo ontologico, ma comunque intrecciato. L'animazione a tecnica

@@ -23,6 +23,24 @@ const GlobalStyles = createGlobalStyle`
     position: relative;
   }
 
+  .auto-resizable-iframe {
+    max-width: 100vw;
+  }
+
+  .auto-resizable-iframe > div {
+    position: relative;
+    padding-bottom: 60%;
+    height: 0px;
+  }
+
+  .auto-resizable-iframe iframe {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+  }
+
   :root {
 
     /*************

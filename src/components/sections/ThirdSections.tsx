@@ -26,9 +26,6 @@ const VideosWrapper = styled.div`
     width: 60%;
   }
   align-content: stretch;
-  div{
-    height: 100%;
-  }
   gap: 20px;
 `
 
@@ -50,17 +47,12 @@ const ImageWrapper = styled.div`
 `
 
 
-const VR_VIDEO = 'https://www.youtube.com/watch?v=Zz7sx8rGYFw&ab_channel=CITRUSxLEMON'
-const SHORT_VIDEO = 'https://www.youtube.com/watch?v=2BkFXj093lo&t=54s&ab_channel=CITRUSxLEMON'
+export const VR_VIDEO = 'https://www.youtube.com/watch?v=Zz7sx8rGYFw&ab_channel=CITRUSxLEMON'
+export const SHORT_VIDEO = 'https://www.youtube.com/watch?v=2BkFXj093lo&t=54s&ab_channel=CITRUSxLEMON'
 
 const ThirdSection: React.FC = () => {
 
     const screenWidth = useWindowSize().width;
-
-    const opts = {
-        height: screenWidth > Viewports.tabletLandscape ? '100%' : '200px',
-        width: '100%',
-    };
 
     return (
         <Section backgroundType={BackgroundType.dark} dynamic>
@@ -70,19 +62,19 @@ const ThirdSection: React.FC = () => {
                         <img src={LemonGrabbing} alt={''}/>
                     </ImageWrapper>
                     <VideosWrapper>
-                        <YoutubePlayer videoId={youtubeParser(VR_VIDEO)} {...opts} />
-                        <YoutubePlayer videoId={youtubeParser(SHORT_VIDEO)} {...opts} />
+                        <YoutubePlayer title={'360 video'} videoId={youtubeParser(VR_VIDEO)} />
+                        <YoutubePlayer title={'short video'} videoId={youtubeParser(SHORT_VIDEO)} />
                     </VideosWrapper>
                 </ThirdSectionWrapper>
             </>) : (<ThirdSectionWrapper>
                 <VideosWrapper>
-                    <YoutubePlayer videoId={youtubeParser(VR_VIDEO)} {...opts}  />
+                    <YoutubePlayer title={'360 video'} videoId={youtubeParser(VR_VIDEO)}  />
                 </VideosWrapper>
                 <ImageWrapper>
                     <img src={LemonGrabbing} alt={''}/>
                 </ImageWrapper>
                 <VideosWrapper>
-                    <YoutubePlayer videoId={youtubeParser(SHORT_VIDEO)} {...opts}  />
+                    <YoutubePlayer title={'short video'} videoId={youtubeParser(SHORT_VIDEO)}  />
                 </VideosWrapper>
             </ThirdSectionWrapper>
             )}

@@ -1,24 +1,22 @@
 import React from "react";
 
 interface YoutubePlayerProps {
+    title: string,
     videoId: string,
-    width?: string,
-    height?: string
 }
 
-const YoutubePlayer = ({ videoId, width, height }: YoutubePlayerProps) => {
+const YoutubePlayer = ({title, videoId }: YoutubePlayerProps) => {
 
 return(
-    <div>
-        <iframe
-            width={width}
-            height={height}
-            src={`https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1`}
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-            title="Embedded youtube"
-        />
+    <div className="auto-resizable-iframe">
+        <div>
+            <iframe
+                title={title}
+                frameBorder="0"
+                allowFullScreen="true"
+                src={`http://www.youtube.com/embed/${videoId}`}>
+            </iframe>
+        </div>
     </div>
 )};
 
