@@ -8,6 +8,9 @@
 /.idea
 /.firebase
 
+.idea
+.firebase
+
 # testing
 /coverage
 

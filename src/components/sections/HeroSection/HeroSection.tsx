@@ -62,6 +62,7 @@ const EyeLineMobile: React.FC = ({nElements, firstColor, secondColor}: EyeLinePr
 const FirstSectionWrapper = styled.div`
   background: var(--header-background);
   color: white;
+  padding-bottom: 34px;
 `
 
 const HeroSectionWrapper = styled.section`
