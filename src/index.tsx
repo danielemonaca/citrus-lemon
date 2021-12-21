@@ -6,7 +6,6 @@ import FirstPage from "./pages/FirstPage";
 import SecondPage from "./pages/SecondPage";
 import ThirdPage from "./pages/ThirdPage";
 import GlobalStyles from "./styles";
-import CreateScan from "./pages/CreateScan";
 
 ReactDOM.render(
     <>
@@ -17,7 +16,6 @@ ReactDOM.render(
                 <Route path="1" element={<FirstPage />} />
                 <Route path="2" element={<SecondPage />} />
                 <Route path="3" element={<ThirdPage/>} />
-                <Route path="cococosimino" element={<CreateScan/>} />
             </Routes>
         </BrowserRouter>
     </>,
