@@ -53,7 +53,6 @@ function GoogleMapComponent({clickable}: GooogleMapProps) {
         get(child(scansRef, `/`)).then((snapshot) => {
             if (snapshot.exists()) {
                 if (snapshot.val() !== null) {
-                    console.log(snapshot.val())
                     setScans(snapshot.val());
                 }
             } else {
@@ -65,7 +64,6 @@ function GoogleMapComponent({clickable}: GooogleMapProps) {
     }, []);
 
     const handleOnClick = (e) =>  {
-        console.log(e.latLng.lat());
         const firebaseConfig = {
             apiKey: "AIzaSyBeHjhp2KuQRyYsFodKIaUmmuniMAY2_1A",
             authDomain: "citrus-x-lemon.firebaseapp.com",
