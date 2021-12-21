@@ -27,7 +27,6 @@ const ImagesWrapper = styled.div`
   justify-content: center;
   gap: 30px;
   flex-direction: column;
-
 `
 
 const MobileImage = styled(Image)`

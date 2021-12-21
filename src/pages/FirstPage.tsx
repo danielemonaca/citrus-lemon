@@ -4,6 +4,7 @@ import LemonGrabbing from "../assets/LemonGrabbing.gif";
 import styled from "styled-components";
 import GoogleMapComponent from "../components/sections/GoogleMapSection/GoogleMapComponent";
 import writePositionData from "../services/position.service";
+import {Link} from "react-router-dom";
 
 const Image = styled.img`
   display: block;
@@ -32,7 +33,6 @@ export const CustomButton = styled.button`
 
 export const ButtonWrapper = styled.div`
   width: 100%;
-
 `
 
 
@@ -52,7 +52,11 @@ export default function FirstPage() {
                     <GoogleMapComponent/>
                 </GoogleMapContainer>)}
             <ButtonWrapper>
-                <CustomButton onClick={(e) => setShowMap(true)}>GUARDA LA MAPPA</CustomButton>
+                {showMap ? (<Link to="/" style={{ textDecoration: 'none' }}>
+                    <CustomButton>VAI AL PROGETTO</CustomButton>
+                </Link>) : (<>
+                    <CustomButton onClick={() => setShowMap(true)}>GUARDA LA MAPPA</CustomButton>
+                </>)}
             </ButtonWrapper>
         </PageLayout>
     );

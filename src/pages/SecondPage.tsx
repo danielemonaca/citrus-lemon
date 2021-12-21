@@ -6,6 +6,7 @@ import YoutubePlayer from "../components/youtube-player/YoutubePlayer";
 import {ButtonWrapper, CustomButton, GoogleMapContainer} from "./FirstPage";
 import youtubeParser from "../utils/youtubeParser";
 import {VR_VIDEO} from "../components/sections/ThirdSections";
+import {Link} from "react-router-dom";
 
 
 export default function SecondPage() {
@@ -24,7 +25,11 @@ export default function SecondPage() {
                     <GoogleMapComponent/>
                 </GoogleMapContainer>)}
             <ButtonWrapper>
-                <CustomButton onClick={(e) => setShowMap(true)}>GUARDA LA MAPPA</CustomButton>
+                {showMap ? (<Link to="/" style={{ textDecoration: 'none' }}>
+                    <CustomButton>VAI AL PROGETTO</CustomButton>
+                </Link>) : (<>
+                    <CustomButton onClick={() => setShowMap(true)}>GUARDA LA MAPPA</CustomButton>
+                </>)}
             </ButtonWrapper>
         </PageLayout>
     );

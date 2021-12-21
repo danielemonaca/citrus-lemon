@@ -7,6 +7,7 @@ import {CustomButton, GoogleMapContainer} from "./FirstPage";
 import youtubeParser from "../utils/youtubeParser";
 import YoutubePlayer from "../components/youtube-player/YoutubePlayer";
 import {SHORT_VIDEO} from "../components/sections/ThirdSections";
+import {Link} from "react-router-dom";
 
 const ButtonWrapper = styled.div`
   width: 100%;
@@ -28,7 +29,11 @@ export default function ThirdPage() {
                     <GoogleMapComponent/>
                 </GoogleMapContainer>)}
             <ButtonWrapper>
-                <CustomButton onClick={(e) => setShowMap(true)}>GUARDA LA MAPPA</CustomButton>
+                {showMap ? (<Link to="/" style={{ textDecoration: 'none' }}>
+                    <CustomButton>VAI AL PROGETTO</CustomButton>
+                </Link>) : (<>
+                    <CustomButton onClick={() => setShowMap(true)}>GUARDA LA MAPPA</CustomButton>
+                </>)}
             </ButtonWrapper>
         </PageLayout>
     );

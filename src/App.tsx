@@ -8,8 +8,6 @@ import FifthSection from "./components/sections/FifthSection";
 import LastSection from "./components/sections/LastSection";
 
 
-
-
 function App() {
     return (
         <>
